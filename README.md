@@ -30,3 +30,12 @@ For more information on the language and its supported features, please see the 
 
 ## Contributions
 Mouse Script is an open-source project and contributions are welcome. If you have an idea for a new feature or have found a bug, please open an issue on the project's GitHub page.
+
+## Installing Mouse Scrip
+Installing Mouse Script is easy! Simply download the latest release from the releases page on the project's GitHub page. The release package includes both the Mouse Script application and the Mouse Script Editor, a tool for creating and editing Mouse Script scripts.
+
+To install Mouse Script, simply extract the release package to a location on your computer and run the Mouse Script application. You can then use the Mouse Script Editor or the command line to create and run Mouse Script scripts.
+
+Please note that Mouse Script is only supported on Windows operating systems 8 and 10 and may not work on other operating systems.
+![image](https://user-images.githubusercontent.com/98618920/210666360-80850782-56a6-4bd3-9b24-343f71494677.png)
+
