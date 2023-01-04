@@ -1,0 +1,51 @@
+:Loop
+$counter += 1;
+if $counter=500; goto Done;
+Echo $counter;
+goto Loop;
+
+:Done
+Echo "-------------------------";
+Echo " Reached 500! ";
+Echo "-------------------------";
+Pause;
+goto Main;
+
+:Hello
+Echo "Hello!";
+Pause;
+goto Main;
+
+:World
+Echo "World!";
+Pause;
+goto Main;
+
+// todo: add any command to excuite after if
+// currently, only goto command works. 
+
+:HandleInput
+if $args[0]=1; goto Hello;
+if $args[0]=2; goto World;
+if $args[0]=3; goto Loop;
+if $args[0]=0; goto ExitApp;
+Echo "Invalid Input, try again";
+Pause;
+
+:Main
+Clear;
+$counter = 0;
+$using = "Console";
+Echo "1 = Hello!"
+Echo "2 = World!"
+Echo "3 = Counter";
+Echo "0 = Exit";
+Print "Enter a option: ";
+$input = Input;
+goto HandleInput >> $input;
+
+:ExitApp
+Exit;
+
+
+

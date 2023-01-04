@@ -1,0 +1,8 @@
+:Main
+$using = "Console";
+// $Console_Hidden = "true";
+echo $Console_Cursor_Pos_X;
+$Console_Title = "Hello";
+Echo "Hello World";
+Pause;
+
