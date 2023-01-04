@@ -1,0 +1,38 @@
+﻿libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(cout.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __free_dbg
+isharp.obj : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(cin.obj) : error LNK2001: unresolved external symbol __free_dbg
+libcpmtd.lib(xwcsxfrm.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(cout.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+isharp.obj : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(locale0.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(cin.obj) : error LNK2001: unresolved external symbol __malloc_dbg
+libcpmtd.lib(cout.obj) : error LNK2001: unresolved external symbol __CrtDbgReport
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __CrtDbgReport
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __CrtDbgReport
+isharp.obj : error LNK2001: unresolved external symbol __CrtDbgReport
+script_handler.obj : error LNK2001: unresolved external symbol __CrtDbgReport
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __CrtDbgReport
+libcpmtd.lib(cin.obj) : error LNK2001: unresolved external symbol __CrtDbgReport
+libcpmtd.lib(_tolower.obj) : error LNK2019: unresolved external symbol __calloc_dbg referenced in function __Getctype
+libcpmtd.lib(locale.obj) : error LNK2001: unresolved external symbol __calloc_dbg
+libcpmtd.lib(wlocale.obj) : error LNK2001: unresolved external symbol __calloc_dbg
+libcpmtd.lib(xlocale.obj) : error LNK2001: unresolved external symbol __calloc_dbg
+libcpmtd.lib(_tolower.obj) : error LNK2019: unresolved external symbol __wcsdup_dbg referenced in function __Getctype
+libcpmtd.lib(xstrcoll.obj) : error LNK2001: unresolved external symbol __wcsdup_dbg
+libcpmtd.lib(xmbtowc.obj) : error LNK2019: unresolved external symbol __CrtDbgReportW referenced in function __Mbrtowc
+libcpmtd.lib(StlLCMapStringA.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(StlCompareStringA.obj) : error LNK2001: unresolved external symbol __CrtDbgReportW
+libcpmtd.lib(locale.obj) : error LNK2019: unresolved external symbol __realloc_dbg referenced in function "private: static void __cdecl std::locale::_Locimp::_Locimp_Addfac(class std::locale::_Locimp *,class std::locale::facet *,unsigned int)" (?_Locimp_Addfac@_Locimp@locale@std@@CAXPAV123@PAVfacet@23@I@Z)
+C:\Users\Admin\Desktop\Carrer\Projects\Mouse Sharp Project\isharp\Debug\isharp.exe : fatal error LNK1120: 7 unresolved externals

@@ -1,0 +1,48 @@
+﻿  stdafx.cpp
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\stdafx.h(21): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\stackoverflowclasses.h(564): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\stackoverflowclasses.h(651): warning C4005: '_WIN32_WINNT': macro redefinition
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\SDKDDKVer.h(215): note: see previous definition of '_WIN32_WINNT'
+  isharp.cpp
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(49): warning C4101: 't': unreferenced local variable
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(227): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): error C2664: 'BOOL SetConsoleTitleW(LPCWSTR)': cannot convert argument 1 from 'const char *' to 'LPCWSTR'
+  c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(508): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(717): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(773): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(864): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\script_handler.h(354): error C2143: syntax error: missing ';' before 'AllocConsole'
+isharp.cpp(22): warning C4007: 'wWinMain': must be '__stdcall'
+isharp.cpp(25): error C2664: 'std::wstring stackoverflowclasses::ToWString(const std::string &)': cannot convert argument 1 from 'LPTSTR' to 'const std::string &'
+  isharp.cpp(25): note: Reason: cannot convert from 'LPTSTR' to 'const std::string'
+  isharp.cpp(25): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+  parser.cpp
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(49): warning C4101: 't': unreferenced local variable
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(227): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): error C2664: 'BOOL SetConsoleTitleW(LPCWSTR)': cannot convert argument 1 from 'const char *' to 'LPCWSTR'
+  c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(508): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(717): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(773): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(864): warning C4018: '<': signed/unsigned mismatch
+  script_handler.cpp
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(49): warning C4101: 't': unreferenced local variable
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(227): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): error C2664: 'BOOL SetConsoleTitleW(LPCWSTR)': cannot convert argument 1 from 'const char *' to 'LPCWSTR'
+  c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(508): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(717): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(773): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(864): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\script_handler.h(354): error C2143: syntax error: missing ';' before 'AllocConsole'
+  stackoverflowclasses.cpp
+  variableHelper.cpp
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(49): warning C4101: 't': unreferenced local variable
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(227): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): error C2664: 'BOOL SetConsoleTitleW(LPCWSTR)': cannot convert argument 1 from 'const char *' to 'LPCWSTR'
+  c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(229): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(508): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(717): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(773): warning C4018: '<': signed/unsigned mismatch
+c:\users\admin\dropbox\mouse sharp project\isharp\isharp\parser.h(864): warning C4018: '<': signed/unsigned mismatch
