@@ -84,7 +84,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -144,26 +144,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="parser.h" />
+    <ClInclude Include="Lexor.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="randomClasses.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="script_handler.h" />
     <ClInclude Include="helperclasses.h" />
+    <ClInclude Include="ScriptHandler.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="variableHelper.h" />
+    <ClInclude Include="VarManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="isharp.cpp" />
-    <ClCompile Include="parser.cpp" />
-    <ClCompile Include="script_handler.cpp" />
+    <ClCompile Include="Lexor.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="helperclasses.cpp" />
+    <ClCompile Include="randomClasses.cpp" />
+    <ClCompile Include="ScriptHandler.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="variableHelper.cpp" />
+    <ClCompile Include="VarManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="isharp.rc" />
@@ -171,6 +175,9 @@
   <ItemGroup>
     <Image Include="..\..\..\..\..\Desktop\MOUSESCRIPTLOGO.ico" />
     <Image Include="..\..\Setup\images\MOUSESCRIPTLOGO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lexor.cpp.vsspell" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

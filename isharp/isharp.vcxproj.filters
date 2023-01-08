@@ -24,16 +24,22 @@
     <ClInclude Include="helperclasses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="script_handler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="variableHelper.h">
+    <ClInclude Include="Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VarManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lexor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="randomClasses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,13 +53,19 @@
     <ClCompile Include="helperclasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="script_handler.cpp">
+    <ClCompile Include="Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="parser.cpp">
+    <ClCompile Include="VarManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="variableHelper.cpp">
+    <ClCompile Include="ScriptHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lexor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="randomClasses.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,5 +81,8 @@
     <Image Include="..\..\Setup\images\MOUSESCRIPTLOGO.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lexor.cpp.vsspell" />
   </ItemGroup>
 </Project>

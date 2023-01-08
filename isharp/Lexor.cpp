@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Lexor.h"
 
 Lexor::Lexor() { }
@@ -19,7 +18,6 @@ void Lexor::addToken(string token) {
 @return vector<string> the vector of lexed tokens
 */
 vector<string> Lexor::lex(string code) {
-	{
 		for each (char c in code)
 		{
 			token += c;

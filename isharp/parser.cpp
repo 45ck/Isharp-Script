@@ -1,11 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <Windows.h>
-#include "helperclasses.h"
 #include "Parser.h"
-#include "VarManager.h"
+
+Parser::Parser() { }
+Parser::~Parser() { }
 
 /**
 
@@ -681,14 +677,4 @@ top: // used for GOTO and functions...
 			}
 		}
 	}
-}
-
-
-Parser::Parser()
-{
-}
-
-
-Parser::~Parser()
-{
 }

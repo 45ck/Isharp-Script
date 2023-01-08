@@ -1,7 +1,16 @@
 #pragma once
-#include "stdafx.h"
+#ifndef PARSER
+#define PARSER
+
 #include <iostream>
-#include "variableHelper.h"
+#include <fstream>
+#include <string>
+#include <vector>
+#include <Windows.h>
+#include "helperclasses.h"
+#include "Parser.h"
+#include "VarManager.h"
+
 using namespace std;
 
 class Parser
@@ -22,3 +31,4 @@ public:
 	static void printVector(std::vector<std::string> vs);
 };
 
+#endif

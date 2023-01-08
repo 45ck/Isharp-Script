@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef SCRIPT
+#define SCRIPT
+
 #include <vector>
 #include <string>
 #include "Parser.h"
@@ -13,3 +17,5 @@ public:
 	Lexor lexor;
 	void runScript(std::vector<std::string> script, std::string argv);
 };
+
+#endif SCRIPT

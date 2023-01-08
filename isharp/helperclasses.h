@@ -162,8 +162,6 @@ public:
 		}
 	}
 
-	//http://blog.mrroa.com/2013/06/06/tiptrick-how-to-retrieve-a-sub-string-between-two-delimiters-using-c/
-
 	static std::string ExtractString(std::string source, std::string start, std::string end)
 	{
 		std::size_t startIndex = source.find(start);

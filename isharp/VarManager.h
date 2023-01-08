@@ -4,9 +4,15 @@
 
 #include <map>
 #include <string>
+#include <cstdlib>
+#include <stdexcept>
+#include "helperclasses.h"
 
 class VarManager {
 public:
+	VarManager();
+	~VarManager();
+
 	bool usingConsole = false;
 	bool usingConsoleExtra = false;
 	bool usingRandom = false;

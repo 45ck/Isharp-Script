@@ -1,70 +1,72 @@
 #include "VarManager.h"
 
-#include <cstdlib>
-#include <stdexcept>
+VarManager::VarManager() { }
+VarManager::~VarManager() { }
 
-#include "helperclasses.h"
-
-namespace {
-    // Helper function for setting console cursor position.
-    void SetConsoleCursorPosition(int x, int y) {
-        COORD cord;
-        cord.X = x;
-        cord.Y = y;
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cord);
-    }
-}  
+// Helper function for setting console cursor position.
+void SetConsoleCursorPosition(int x, int y) {
+    COORD cord;
+    cord.X = x;
+    cord.Y = y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cord);
+}
 
 bool VarManager::systemVars(const std::string& name,
     const std::string& content) {
     try {
         size_t t;
-        if (content[0] == '"') content = PF::removeQuotes(content);
+        string contentString = content;
+
+        if (content[0] == '"') {
+            contentString.erase(0, 1);
+            contentString.erase(contentString.size() - 1);
+        }
+
         if (name == "$using") {
-            if (content == "console") {
+            if (contentString == "console") {
                 usingConsole = true;
             }
-            else if (content == "console_Extra") {
+            else if (contentString == "console_Extra") {
                 usingConsole = true;
             }
-            else if (content == "random") {
+            else if (contentString == "random") {
                 usingRandom = true;
             }
         }
         else if (usingConsole) {
             if (name == "$console_hidden") {
-                if (content == "true") {
+                if (contentString == "true") {
                     ShowWindow(GetConsoleWindow(), SW_HIDE);
                 }
-                else if (content == "false") {
+                else if (contentString == "false") {
                     ShowWindow(GetConsoleWindow(), SW_SHOW);
                 }
                 else {
-                    helperclasses::error("The system variable \"$console_hidden\" does not recognise the value of \"" + content + "\". This variable is a bool (\"true\" or \"false\").");
+                    helperclasses::error("The system variable \"$console_hidden\" does not recognise the value of \"" + contentString + "\". This variable is a bool (\"true\" or \"false\").");
                 }
                 return true;
             }
             else if (name == "$console_fontName") {
-                fontName = content;
+                fontName = contentString;
                 return true;
             }
             else if (name == "$console_fontSize") {
-                fontSize = content;
+                fontSize = contentString;
                 return true;
             }
             else if (name == "$console_cursor_pos_x") {
-                SetConsoleCursorPosition(std::atoi(content.c_str()), 0);
+                SetConsoleCursorPosition(std::atoi(contentString.c_str()), 0);
                 return true;
             }
             else if (name == "$console_cursor_pos_y") {
-                SetConsoleCursorPosition(0, std::atoi(content.c_str()));
+                SetConsoleCursorPosition(0, std::atoi(contentString.c_str()));
                 return true;
             }
             else if (name == "$console_width") {
-                console_functions::setConsoleWidth(std::atoi(content.c_str()));
+                console_functions::setConsoleWidth(std::atoi(contentString.c_str()));
             }
             else if (name == "$console_height") {
-                console_functions::setConsoleHeight(std::atoi(content.c_str()));
+                console_functions::setConsoleHeight(std::atoi(contentString.c_str()));
             }
             else {
                 return false;
@@ -75,7 +77,7 @@ bool VarManager::systemVars(const std::string& name,
         }
     }
     catch (std::exception e) {
-        helperclasses::error("A fatal error has occured when trying to set a system variable (name = " + name + ", content = " + content + ").");
+        helperclasses::error("A fatal error has occured when trying to set a system variable (name = " + name + ", contentString = " + content + ").");
         return false;
     }
 }
@@ -169,17 +171,17 @@ std::string VarManager::getVar(const std::string& name) {
  * system variable, it is set and the function returns immediately.
  *
  * @param name The name of the variable.
- * @param content The value of the variable.
+ * @param contentString The value of the variable.
  */
-void VarManager::addVar(const std::string& name, const std::string& content) {
-    if (systemVars(name, content)) {
+void VarManager::addVar(const std::string& name, const std::string& contentString) {
+    if (systemVars(name, contentString)) {
         return;
     }
 
     if (variables.find(name) != variables.end()) {
-        variables[name] = content;
+        variables[name] = contentString;
     }
     else {
-        variables.insert(std::make_pair(name, content));
+        variables.insert(std::make_pair(name, contentString));
     }
 }

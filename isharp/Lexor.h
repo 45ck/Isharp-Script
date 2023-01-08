@@ -1,13 +1,15 @@
 #pragma once
 
-using namespace std;
+#ifndef LEXOR
+#define LEXOR
 
-#include "stdafx.h"
+using namespace std;
 #include "helperclasses.h"
 #include "Parser.h"
 
 class Lexor {
 private:
+
 	string token; // tempary variable to use for if statments etc,
 
 	bool string_state; // used to know if we are recording a string.
@@ -38,6 +40,7 @@ private:
 	bool if_recording;
 
 
+
 	// DEBUG SETTINGS...
 	bool print_tokens = false;
 
@@ -45,6 +48,11 @@ private:
 	 void addToken(string token);
 public:
 	vector<string> lex(string code);
+
+	Lexor();
+	~Lexor();
 };
+
+#endif 
 
 
