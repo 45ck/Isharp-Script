@@ -1,0 +1,5 @@
+
+:Main
+$using = "Console";
+$mouse_x = 200;
+Pause;

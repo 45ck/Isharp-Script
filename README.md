@@ -16,14 +16,10 @@ To get started with Mouse Script, simply download the application and run it fro
 
 Here is an example of a simple script that displays a message to the user and asks for their input:
 
-```php
-:Main
-$using = "Console";
-Print "Please enter your name ";
-$name = Input;
-Print "Your name is: ";
-Echo $name;
-Pause;
+```cmd
+msgbox "Hello, world!"
+input $name
+echo "Your name is: $name"
 ```
 
 For more information on the language and its supported features, please see the documentation.

@@ -1,0 +1,15 @@
+:Main
+  $using = "Console";
+  $counter = 0;
+
+:count_function
+  $counter += 1;
+  Print "Counter: ";
+  Echo $counter;
+  if $counter=10; goto done;
+  goto count_function;
+    
+:done
+  Echo "Done counting!";
+  Pause;
+  Exit;
