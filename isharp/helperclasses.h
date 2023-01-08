@@ -402,31 +402,6 @@ public:
 		return str;
 	}
 
-	static std::wstring ToWString(const std::string& strText)
-	{
-		std::wstring      wstrResult;
-
-		wstrResult.resize(strText.length());
-
-		typedef std::codecvt<wchar_t, char, mbstate_t> widecvt;
-
-		std::locale     locGlob;
-
-		std::locale::global(locGlob);
-
-		const widecvt& cvt(std::use_facet<widecvt>(locGlob));
-
-		mbstate_t   State;
-
-		const char* cTemp;
-		wchar_t*    wTemp;
-
-		cvt.in(State,
-			&strText[0], &strText[0] + strText.length(), cTemp,
-			(wchar_t*)&wstrResult[0], &wstrResult[0] + wstrResult.length(), wTemp);
-
-		return wstrResult;
-	}
 
 	static COORD GetConsoleCursorPosition(HANDLE hConsoleOutput)
 	{

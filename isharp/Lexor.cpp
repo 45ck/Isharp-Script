@@ -1,58 +1,25 @@
-#pragma once
-
-using namespace std;
-
 #include "stdafx.h"
-#include "helperclasses.h"
-#include "parser.h"
+#include "Lexor.h"
 
-class lexor {
-private:
-	string token; // tempary variable to use for if statments etc,
+Lexor::Lexor() { }
+Lexor::~Lexor() { }
 
-	bool string_state; // used to know if we are recording a string.
-	string string_temp; // the temp string we use to temp store data.
-
-	vector<string> tokens; // temp token list.
-	int tokensCounter; // tokens counter for uses bellow..
-
-
-	bool var_recording;
-	bool var_str_recording;
-	string var_temp;
-
-	string int_temp;
-
-	bool adding_recording;
-	string adding_temp;
-
-	bool label_recording;
-	string label_temp;
-
-	bool goto_recording;
-	string goto_temp;
-
-	bool goFunc_recording;
-	string goFunc_temp;
-
-	bool if_recording;
-
-
-	// DEBUG SETTINGS...
-	bool print_tokens = false;
-
-     bool addTokenRemoveStarter; 
-	 void addToken(string token) {
-		if (print_tokens) {
-			cout << token << endl;
-		}
-		tokensCounter++;
-		tokens.resize(tokensCounter + 1);
-		tokens[tokensCounter] = token;
+void Lexor::addToken(string token) {
+	if (print_tokens) {
+		cout << token << endl;
 	}
-public:
-	vector<string> lex(string code) {
-		//cout << "CODE: > " + code << endl;
+	tokensCounter++;
+	tokens.resize(tokensCounter + 1);
+	tokens[tokensCounter] = token;
+}
+
+/**
+@brief Lexical analysis function for turning code into tokens
+@param code the string of code to be lexed
+@return vector<string> the vector of lexed tokens
+*/
+vector<string> Lexor::lex(string code) {
+	{
 		for each (char c in code)
 		{
 			token += c;
@@ -71,24 +38,24 @@ public:
 				else if (goto_recording) {
 					token = "";
 				}
-				 else if (!string_state) {
+				else if (!string_state) {
 					token = "";
-				 }
-				 if (var_temp != "" && if_recording) {
-					 addToken("VAR:" + var_temp);
-					 var_temp = "";
-					 var_recording = false;
-				 }
+				}
+				if (var_temp != "" && if_recording) {
+					addToken("VAR:" + var_temp);
+					var_temp = "";
+					var_recording = false;
+				}
 				else {
 					string_temp += token;
 					token = "";
-				} 
-			} 
+				}
+			}
 			else if (c == '\n') {
 				if (label_recording) {
-				addToken("LABEL" + label_temp);
-				label_temp = "";
-				label_recording = false;
+					addToken("LABEL" + label_temp);
+					label_temp = "";
+					label_recording = false;
 				}
 
 				token = "";
@@ -103,12 +70,12 @@ public:
 				else if (int_temp != "") {
 					addToken("INT:" + int_temp);
 					int_temp = "";
-				} 
+				}
 				else if (label_recording) {
 					addToken("LABEL" + label_temp);
 					label_temp = "";
 					label_recording = false;
-				} 
+				}
 				else if (goFunc_recording) {
 					addToken("GOFUNC:" + trim_functions::trim_copy(goFunc_temp));
 					goFunc_recording = false;
@@ -123,7 +90,7 @@ public:
 				if_recording = false;
 				token = "";
 			}
-			else if (!var_recording && !goFunc_recording && ( token == "0" || token == "1" || token == "2" || token == "3" || token == "4" ||
+			else if (!var_recording && !goFunc_recording && (token == "0" || token == "1" || token == "2" || token == "3" || token == "4" ||
 				token == "5" || token == "6" || token == "7" || token == "8" || token == "9")) { // INT
 				if (!string_state) {
 					int_temp += token;
@@ -170,11 +137,14 @@ public:
 				else {
 					if (token == "+=") {
 						addToken("+EQUALS");
-					} else if (token == "-=") {
+					}
+					else if (token == "-=") {
 						addToken("-EQUALS");
-					} else if (token == "*=") {
+					}
+					else if (token == "*=") {
 						addToken("*EQUALS");
-					} else if (token == "/=") {
+					}
+					else if (token == "/=") {
 						addToken("/EQUALS");
 					} if (token == "%=") {
 						addToken("%EQUALS");
@@ -186,7 +156,7 @@ public:
 				var_recording = true;
 				var_temp += token;
 				token = "";
-			} 
+			}
 			else if (token == "\"" && !goFunc_recording) {
 				if (!string_state) {
 					string_state = true;
@@ -316,7 +286,7 @@ public:
 			else if (token == "Console") {
 				addToken("CONSOLE");
 				token = "";
-			} 
+			}
 			else if (token == "Show") {
 				addToken("SHOW");
 				token = "";
@@ -337,53 +307,4 @@ public:
 		for (int i = 0; i <= 8; i++)
 			addToken("EXIT"); // add the exit token at the end of the script so the application does to crash.. ( it runs out of lines and does not know what to do )
 		return tokens;
-	}
-};
-
-class script_handler
-{
-public:
-	script_handler();
-	~script_handler();
-
-	lexor lexor;
-
-	void runScript(vector<string> script, string argv) {
-		
-		// allow console
-		WIN32::AllocConsole();
-		freopen("CONIN$", "r", stdin);
-		freopen("CONOUT$", "w", stdout);
-		freopen("CONOUT$", "w", stderr);
-
-		//cout << argv << endl;
-
-
-		string scriptOne = "";
-		for each (string s in script)
-		{
-			scriptOne += trim_functions::trim_copy(s) + '\n';
-		}
-
-		parser parser;
-		vector<string> LeXed = lexor.lex(scriptOne);
-
-		bool print_debug = false;
-
-		if (print_debug) {
-			cout << " --------------------- " << endl;
-			cout << "		LEXOR " << endl;
-			cout << " --------------------- " << endl;
-			PF::printVector(LeXed);
-			cout << " --------------------- " << endl;
-			cout << "		OUTPUT " << endl;
-			cout << " --------------------- " << endl;
-
-			cout << endl << endl;
-		}
-
-		parser.parse(LeXed);
-		//system("Pause");
-	}
-};
-
+}
